@@ -1,0 +1,84 @@
+{
+  "name": "card-survey",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "--make-it-pretty--": "",
+    "format": "concurrently --prefix-colors 'yellow' 'yarn:format:*'",
+    "format:eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --fix --format=pretty .",
+    "format:package-json": "format-package -w",
+    "format:prettier": "prettier --write '**/*.{js,jsx,ts,tsx,html,css,scss,gql,json,md}' '.editorconfig'",
+    "format:doctoc": "echo doctoc --maxlevel 3 --notitle  README.md",
+    "lint": "concurrently --prefix-colors 'yellow' 'yarn:lint:*'",
+    "lint:eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty .",
+    "lint:tsc": "tsc -b",
+    "lint:markdown": "markdownlint --ignore '**/node_modules/**' '**/*.md'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.md": "yarn format:markdown",
+    "**/*.{js,jsx,ts,tsx}": "yarn format:eslint",
+    "**/package.json": "yarn format:package-json",
+    "*.{js,jsx,ts,tsx,html,css,scss,gql,json,md}": "yarn format:prettier",
+    "README.md": "yarn format:doctoc"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "next": "^10.1.3",
+    "postcss": "^8.2.9",
+    "react": "&17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "concurrently": "^6.0.0",
+    "doctoc": "^2.0.0",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unicorn": "^25.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.0.8",
+    "format-package": "^6.1.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.4",
+    "markdownlint-cli": "^0.26.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.2.0",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^2.0.4",
+    "typescript": "^4.2.3"
+  }
+}
