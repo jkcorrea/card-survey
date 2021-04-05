@@ -1,5 +1,5 @@
 import React from 'react'
-import { faTimesCircle } from '@fortawesome/pro-solid-svg-icons'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type Fuse from 'fuse.js'
 
