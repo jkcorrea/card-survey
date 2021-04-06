@@ -47,7 +47,7 @@ const CardSelector: React.FC = () => {
   const copyToClipboard = () => {
     const input = document.createElement('input')
     document.body.append(input)
-    input.value = selectedCards.map(c => c.refIndex).join(',')
+    input.value = selectedCards.map(c => c.item).join(',')
     input.select()
     document.execCommand('copy')
     input.remove()
@@ -63,7 +63,7 @@ const CardSelector: React.FC = () => {
 
       <div className="relative">
         <div
-          className="relative flex h-auto w-full items-center bg-white border-2 border-gray-300 rounded-lg p-2 flex-wrap"
+          className="relative flex h-auto w-full items-center bg-white border-2 border-gray-300 rounded-lg p-2 flex-wrap cursor-text"
           style={{ minHeight: '3rem' }}
           onClick={e => {
             e.stopPropagation()
@@ -77,9 +77,13 @@ const CardSelector: React.FC = () => {
           <input
             ref={searchInputRef}
             type="text"
-            placeholder="Type a card..."
+            placeholder={
+              selectedCards.length > 0
+                ? 'Type to select another card...'
+                : 'Start typing to select your cards...'
+            }
             autoComplete="off"
-            className="my-2 p-2 border-none bg-transparent outline-none"
+            className="flex-1 my-2 p-2 border-none bg-transparent outline-none"
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
           />
@@ -97,14 +101,14 @@ const CardSelector: React.FC = () => {
       <div className="mt-2 text-right">
         <button
           type="button"
-          className={`inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 text-white ${
+          className={`inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 text-white ${
             isCopied
               ? 'bg-green-300 hover:bg-green-500 focus:ring-green-300'
-              : 'bg-purple-500 hover:bg-purple-700 focus:ring-purple-500'
+              : 'bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500'
           }`}
           onClick={copyToClipboard}
         >
-          {isCopied ? 'Copied!' : 'Copy me!'}
+          {isCopied ? 'Copied!' : 'Done. Copy me!'}
         </button>
       </div>
     </form>

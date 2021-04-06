@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Pill: React.FC<Props> = ({ card, onDelete }) => (
-  <span className="mx-1 my-1 py-2 px-4 inline-flex justify-between items-center rounded-full whitespace-nowrap bg-purple-500 text-white">
+  <span className="mx-1 my-1 py-2 px-4 inline-flex justify-between items-center rounded-full whitespace-nowrap bg-purple-500 text-white cursor-default">
     {card.item}
     <FontAwesomeIcon
       icon={faTimesCircle}
