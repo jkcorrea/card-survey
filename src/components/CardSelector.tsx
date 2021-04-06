@@ -63,7 +63,7 @@ const CardSelector: React.FC = () => {
 
       <div className="relative">
         <div
-          className="relative flex h-auto w-full items-center bg-white border-2 border-gray-300 rounded-lg p-2 flex-wrap cursor-text"
+          className="relative flex h-auto w-full my-1 items-center bg-white border-2 border-gray-300 rounded-lg p-2 flex-wrap cursor-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-rose-400"
           style={{ minHeight: '3rem' }}
           onClick={e => {
             e.stopPropagation()
@@ -75,6 +75,8 @@ const CardSelector: React.FC = () => {
           ))}
 
           <input
+            autoFocus
+            tabIndex={0}
             ref={searchInputRef}
             type="text"
             placeholder={
@@ -100,11 +102,12 @@ const CardSelector: React.FC = () => {
 
       <div className="mt-2 text-right">
         <button
+          tabIndex={0}
           type="button"
-          className={`inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 text-white ${
+          className={`inline-flex items-center mt-1 px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 text-white transform transition hover:-translate-y-px hover:shadow-xl ${
             isCopied
               ? 'bg-green-300 hover:bg-green-500 focus:ring-green-300'
-              : 'bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500'
+              : 'bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 hover:from-rose-400 hover:via-fuchsia-500 hover:to-indigo-500 focus:ring-rose-400'
           }`}
           onClick={copyToClipboard}
         >

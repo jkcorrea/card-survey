@@ -23,7 +23,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      ringWidth: ['focus-visible'],
+      ringOffsetWidth: ['focus-visible'],
+      ringColor: ['focus-visible'],
+    },
   },
   plugins: [],
 }

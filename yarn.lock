@@ -2258,6 +2258,11 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
 
+focus-visible@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/focus-visible/-/focus-visible-5.2.0.tgz#3a9e41fccf587bd25dcc2ef045508284f0a4d6b3"
+  integrity sha512-Rwix9pBtC1Nuy5wysTmKy+UjbDJpIfg8eHjw0rjZ1mX4GNLz1Bmd16uDpI3Gk1i70Fgcs8Csg2lPm8HULFg9DQ==
+
 foreach@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
@@ -3946,6 +3951,13 @@ postcss-filter-plugins@^3.0.1:
   integrity sha512-tRKbW4wWBEkSSFuJtamV2wkiV9rj6Yy7P3Y13+zaynlPEEZt8EgYKn3y/RBpMeIhNmHXFlSdzofml65hD5OafA==
   dependencies:
     postcss "^6.0.14"
+
+postcss-focus-visible@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-focus-visible/-/postcss-focus-visible-5.0.0.tgz#61e0909244cd15b9075bd40a4f176aa4e2446dbc"
+  integrity sha512-KWMjuX+6Mbt7BvD7L9YETXXx8pmNSlT881Zdebbi5zLKdRIM0FIlwG87i/RXiwTf5nGJdaHA1KKsE6gW+O719A==
+  dependencies:
+    postcss "^7.0.27"
 
 postcss-functions@^3:
   version "3.0.0"
