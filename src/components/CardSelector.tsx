@@ -119,14 +119,16 @@ const CardSelector: React.FC = () => {
         <button
           tabIndex={0}
           type="button"
-          className={`inline-flex items-center mt-1 px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 text-white transform transition hover:-translate-y-px hover:shadow-xl ${
+          className={`inline-flex items-center mt-1 px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 text-white transform transition ${
             isCopied
-              ? 'bg-green-300 hover:bg-green-500 focus:ring-green-300'
-              : 'bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 hover:from-rose-400 hover:via-fuchsia-500 hover:to-indigo-500 focus:ring-rose-400'
+              ? 'bg-green-500 focus:ring-green-500'
+              : 'bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 hover:from-rose-400 hover:via-fuchsia-500 hover:to-indigo-500 focus:ring-rose-400 hover:-translate-y-px hover:shadow-xl'
           }`}
           onClick={copyToClipboard}
         >
-          {isCopied ? 'Copied!' : 'Done. Copy me!'}
+          {isCopied
+            ? 'Copied! Please return to the survey :)'
+            : 'Done. Copy me!'}
         </button>
       </div>
     </form>
