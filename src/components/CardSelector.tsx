@@ -4,20 +4,31 @@ import Fuse from 'fuse.js'
 import CardList from './CardList'
 import Pill from './Pill'
 
-import cards from '../cards.json'
+import _cards from '../cards.json'
 
-const fuse = new Fuse(cards, { includeScore: true })
+export interface CardInfo {
+  name: string
+  image: string
+}
+
+const cards: CardInfo[] = _cards.map(c => ({
+  name: c,
+  image:
+    'https://citicards.citi.com/usc/LPACA/Citi/Cards/DoubleCash/External_HT2/lib/doublecash_card_desktop@2x-kkzyptkf.webp',
+}))
+
+const fuse = new Fuse(cards, { includeScore: true, keys: ['name'] })
 
 const CardSelector: React.FC = () => {
   const [showList, setShowList] = useState(false)
   const [isCopied, setIsCopied] = useState(false)
   const [inputValue, setInputValue] = useState('')
   const [filteredCards, setFilteredCards] = useState<
-    Fuse.FuseResult<string>[]
+    Fuse.FuseResult<CardInfo>[]
   >()
-  const [selectedCards, setSelectedCards] = useState<Fuse.FuseResult<string>[]>(
-    [],
-  )
+  const [selectedCards, setSelectedCards] = useState<
+    Fuse.FuseResult<CardInfo>[]
+  >([])
   const searchInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -29,7 +40,7 @@ const CardSelector: React.FC = () => {
     setShowList(false)
   }, [inputValue])
 
-  const selectCard = (card: Fuse.FuseResult<string>) => {
+  const selectCard = (card: Fuse.FuseResult<CardInfo>) => {
     setSelectedCards([...selectedCards, card])
     setInputValue('')
     searchInputRef.current?.focus()
@@ -47,7 +58,7 @@ const CardSelector: React.FC = () => {
   const copyToClipboard = () => {
     const input = document.createElement('input')
     document.body.append(input)
-    input.value = selectedCards.map(c => c.item).join(',')
+    input.value = selectedCards.map(c => c.item.name).join(',')
     input.select()
     document.execCommand('copy')
     input.remove()
@@ -71,7 +82,11 @@ const CardSelector: React.FC = () => {
           }}
         >
           {selectedCards.map((c, ix) => (
-            <Pill key={c.item} card={c} onDelete={() => unselectCard(ix)} />
+            <Pill
+              key={c.item.name}
+              card={c}
+              onDelete={() => unselectCard(ix)}
+            />
           ))}
 
           <input
