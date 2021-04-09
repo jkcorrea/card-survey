@@ -1,27 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { createClient } from 'contentful'
+// import { createClient } from 'contentful'
 import Fuse from 'fuse.js'
 
 import CardList from './CardList'
 import Pill from './Pill'
 
-const contentfulClient = createClient({
-  space: 'op9x21i1hka0',
-  accessToken: 'Sm0k-6Zuoc7jJM3LOgY2sOc-KE5MKqO7FZY8Qh50730',
-})
+import cards from '../cards.json'
+
+// const contentfulClient = createClient({
+//   space: 'op9x21i1hka0',
+//   accessToken: 'Sm0k-6Zuoc7jJM3LOgY2sOc-KE5MKqO7FZY8Qh50730',
+// })
 
 export interface CardInfo {
+  network: string
   name: string
   image: string
 }
-
-// const cards: CardInfo[] = _cards.map(c => ({
-//   name: c,
-//   image:
-//     'https://citicards.citi.com/usc/LPACA/Citi/Cards/DoubleCash/External_HT2/lib/doublecash_card_desktop@2x-kkzyptkf.webp',
-// }))
-
-// const fuse = new Fuse(cards, { includeScore: true, keys: ['name'] })
 
 const CardSelector: React.FC = () => {
   const [showList, setShowList] = useState(false)
@@ -34,26 +29,28 @@ const CardSelector: React.FC = () => {
     Fuse.FuseResult<CardInfo>[]
   >([])
   const searchInputRef = useRef<HTMLInputElement>(null)
-  const fuse = useRef<Fuse<CardInfo> | null>(null)
+  const fuse = useRef<Fuse<CardInfo> | null>(
+    new Fuse(cards, { includeScore: true, keys: ['name'] }),
+  )
 
-  useEffect(() => {
-    const getCards = async () => {
-      const entries = await contentfulClient.getEntries({
-        content_type: 'card',
-      })
+  // useEffect(() => {
+  //   const getCards = async () => {
+  //     const entries = await contentfulClient.getEntries({
+  //       content_type: 'card',
+  //     })
 
-      const cards: CardInfo[] = entries.items.map(
-        ({ fields: { name, image } }: any) => ({
-          name,
-          image: image.fields.file.url,
-        }),
-      )
+  //     const cards: CardInfo[] = entries.items.map(
+  //       ({ fields: { name, image } }: any) => ({
+  //         name,
+  //         image: image.fields.file.url,
+  //       }),
+  //     )
 
-      fuse.current = new Fuse(cards, { includeScore: true, keys: ['name'] })
-    }
+  //     fuse.current = new Fuse(cards, { includeScore: true, keys: ['name'] })
+  //   }
 
-    getCards()
-  }, [])
+  //   getCards()
+  // }, [])
 
   useEffect(() => {
     if (fuse.current && inputValue.length > 0) {
