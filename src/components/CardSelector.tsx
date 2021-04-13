@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Fuse from 'fuse.js'
 
 import CardList from './CardList'
+import DoneScreen from './DoneScreen'
 import Pill from './Pill'
 
 import cards from '../cards.json'
@@ -65,7 +66,6 @@ const CardSelector: React.FC = () => {
     setSelectedCards([...selectedCards, card])
     setInputValue('')
     searchInputRef.current?.focus()
-    setIsCopied(false)
   }
 
   const unselectCard = (index: number) => {
@@ -73,7 +73,6 @@ const CardSelector: React.FC = () => {
       ...selectedCards.slice(0, index),
       ...selectedCards.slice(index + 1, selectedCards.length),
     ])
-    setIsCopied(false)
   }
 
   const copyToClipboard = () => {
@@ -85,6 +84,16 @@ const CardSelector: React.FC = () => {
     input.remove()
     setIsCopied(true)
   }
+
+  if (isCopied)
+    return (
+      <DoneScreen
+        selected={selectedCards}
+        goBack={() => {
+          setIsCopied(false)
+        }}
+      />
+    )
 
   return (
     <form className="container max-w-screen-md mx-auto w-full">
