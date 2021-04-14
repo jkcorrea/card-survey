@@ -10,14 +10,16 @@ interface Props {
 
 const DoneScreen: React.FC<Props> = ({ selected, goBack }) => (
   <div className="container max-w-screen-md mx-auto w-full">
-    Cool. We got your card list. Now just go back to the previous tab and paste
-    in your results.
+    Cool. We got your card list.{' '}
+    <strong>
+      Now just go back to the previous tab and paste in your results.
+    </strong>
     <br />
     <br />
-    Just to be sure, we&apos;ve got the following cards:
-    <br />
-    <br />
-    <ul className="w-auto h-64 overflow-y-scroll border-gray-200 border-dashed border-2 rounded-xl cursor-default">
+    <span className="my-2 text-sm">
+      We copied the following cards to your clipboard:
+    </span>
+    <ul className="w-auto h-64 my-1 overflow-y-scroll border-gray-200 border-dashed border-2 rounded-xl cursor-default">
       {selected.map(c => (
         <li className="flex items-center space-x-2 px-3 py-2">
           <img src={c.item.image} alt={c.item.name} className="w-12" />
@@ -25,12 +27,13 @@ const DoneScreen: React.FC<Props> = ({ selected, goBack }) => (
         </li>
       ))}
     </ul>
-    <br />
-    Doesn&apos;t look right?{' '}
-    <a onClick={goBack} className="underline cursor-pointer">
-      Click here to go back and change it
-    </a>
-    .
+    <span className="text-sm">
+      Doesn&apos;t look right?{' '}
+      <a onClick={goBack} className="underline cursor-pointer">
+        Click here to go back and change it
+      </a>
+      .
+    </span>
   </div>
 )
 

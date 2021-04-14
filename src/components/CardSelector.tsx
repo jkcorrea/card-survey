@@ -78,7 +78,7 @@ const CardSelector: React.FC = () => {
   const copyToClipboard = () => {
     const input = document.createElement('input')
     document.body.append(input)
-    input.value = selectedCards.map(c => c.item.name).join(',')
+    input.value = selectedCards.map(c => c.item.name).join(', ')
     input.select()
     document.execCommand('copy')
     input.remove()
