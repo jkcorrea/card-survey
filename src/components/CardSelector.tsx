@@ -104,7 +104,7 @@ const CardSelector: React.FC = () => {
 
       <div className="relative">
         <div
-          className="relative flex h-auto w-full my-1 items-center bg-white border-2 border-gray-300 rounded-lg p-2 flex-wrap cursor-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-rose-400"
+          className="relative flex h-auto w-full my-1 items-center bg-white border-2 border-gray-300 rounded-lg p-2 flex-wrap overflow-x-scroll cursor-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-rose-400"
           style={{ minHeight: '3rem' }}
           onClick={e => {
             e.stopPropagation()

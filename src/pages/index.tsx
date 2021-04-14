@@ -18,7 +18,7 @@ const Home: React.FC = () => (
       />
     </Head>
 
-    <main className="container px-20 py-0 flex flex-col flex-1 justify-center items-center">
+    <main className="container px-8 md:px-20 py-0 flex flex-col flex-1 justify-center items-center">
       <CardSelector />
     </main>
   </div>
