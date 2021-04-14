@@ -96,7 +96,7 @@ const CardSelector: React.FC = () => {
     )
 
   return (
-    <form className="container max-w-screen-md mx-auto w-full">
+    <form className="container max-w-screen-md px-4 mx-auto w-full">
       <h3 className="text-sm font-bold leading-loose">
         When you&apos;re finished, click copy below then go back &amp; paste
         what&apos;s in your clipboard back into the form :)

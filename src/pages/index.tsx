@@ -4,7 +4,7 @@ import Head from 'next/head'
 import CardSelector from 'src/components/CardSelector'
 
 const Home: React.FC = () => (
-  <div className="h-screen py-2 px-0 flex flex-col justify-center items-center">
+  <div className="h-screen py-2 px-4 flex flex-col justify-center items-center overflow-y-scroll">
     <Head>
       <title>Lettuce - Card Picker</title>
       <link
@@ -18,7 +18,7 @@ const Home: React.FC = () => (
       />
     </Head>
 
-    <main className="container px-8 md:px-20 py-0 flex flex-col flex-1 justify-center items-center">
+    <main className="container flex flex-col flex-1 justify-center items-center">
       <CardSelector />
     </main>
   </div>
