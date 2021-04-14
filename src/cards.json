@@ -2,56 +2,67 @@
   {
     "network": "American Express",
     "name": "Blue Cash Everyday® Card from American Express",
+    "tags": ["amex", "blue", "cash"],
     "image": "https://cdn.nextinsure.com/imaging/opt/5e52ecd2-3553-4eee-966d-51a4bf770274.png?w=235"
   },
   {
     "network": "American Express",
     "name": "Blue Cash Preferred® Card from American Express",
+    "tags": ["amex", "blue", "cash", "preferred"],
     "image": "https://cdn.nextinsure.com/imaging/opt/da0edfdc-e3f5-4c89-9af0-94cee8a7356e.jpg?w=235"
   },
   {
     "network": "American Express",
     "name": "The Business Platinum Card® from American Express",
+    "tags": ["amex", "business", "platinum"],
     "image": "https://cdn.nextinsure.com/imaging/opt/28aaa1be-ec49-4ac0-8aec-ad177a88cb2e.png?w=235"
   },
   {
     "network": "American Express",
     "name": "The Platinum Card® from American Express",
+    "tags": ["amex", "platinum"],
     "image": "https://cdn.nextinsure.com/imaging/opt/09d4a050-a29b-4322-9c43-9e2b7aad2ec3.png?w=235"
   },
   {
     "network": "American Express",
     "name": "American Express® Business Gold Card",
+    "tags": ["amex", "gold", "business"],
     "image": "https://cdn.nextinsure.com/imaging/opt/0aa0822d-af18-49b6-84ef-e024ccc97c99.jpg?w=235"
   },
   {
     "network": "American Express",
     "name": "Delta SkyMiles® Reserve American Express Card",
+    "tags": ["amex", "delta", "skymiles", "reserve"],
     "image": "https://cdn.nextinsure.com/imaging/opt/47dd49f9-d80b-4251-aa8e-2fbf313e6402.jpg?w=235"
   },
   {
     "network": "American Express",
     "name": "Delta SkyMiles® Platinum Business American Express Card",
+    "tags": ["amex", "delta", "skymiles", "reserve", "platinum", "business"],
     "image": "https://cdn.nextinsure.com/imaging/opt/11e5dc36-aa91-4820-9b8e-67a3e145e86e.jpg?w=235"
   },
   {
     "network": "American Express",
     "name": "The Plum Card® from American Express",
+    "tags": ["amex", "plum"],
     "image": "https://cdn.nextinsure.com/imaging/opt/f317cb21-6c82-44a4-a8fc-a0a42b9fb128.jpg?w=235"
   },
   {
     "network": "American Express",
     "name": "The Blue Business® Plus Credit Card from American Express",
+    "tags": ["amex", "blue", "business", "plus"],
     "image": "https://cdn.nextinsure.com/imaging/opt/d6c50a3d-3ca0-4f80-9789-e37be7145186.jpg?w=235"
   },
   {
     "network": "American Express",
     "name": "Hilton Honors American Express Surpass® Card",
+    "tags": ["amex", "hilton", "honors", "surpass"],
     "image": "https://cdn.nextinsure.com/imaging/opt/b236d040-bebc-4ec3-a1e4-d30b86ec9180.png?w=235"
   },
   {
     "network": "American Express",
     "name": "American Express® Gold Card",
+    "tags": ["amex", "gold"],
     "image": "https://cdn.nextinsure.com/imaging/opt/baae32df-1232-4695-9568-ff3584dc31bf.png?w=235"
   },
   {
@@ -520,11 +531,6 @@
     "image": "https://cdn.nextinsure.com/imaging/opt/816c5a6c-a79e-4ad0-8c10-b22ee1386098.png?w=235"
   },
   {
-    "network": "FoundersCard",
-    "name": "FoundersCard",
-    "image": "https://thepointsguy.global.ssl.fastly.net/us/originals/2017/05/founderscard.png"
-  },
-  {
     "network": "Grand Reserve",
     "name": "Grand Reserve™ World Mastercard®",
     "image": "https://thepointsguy.global.ssl.fastly.net/us/originals/2021/04/568572a0-c5ff-11ea-8416-f5431e354f69-1.png"
@@ -577,6 +583,7 @@
   {
     "network": "GoldmanSachs",
     "name": "AppleCard",
+    "tags": ["apple"],
     "image": "https://cdn.wallethub.com/common/product/images/creditcards/500/apple-credit-card-1551417c.jpg"
   }
 ]

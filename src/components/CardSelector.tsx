@@ -16,6 +16,7 @@ import cards from '../cards.json'
 export interface CardInfo {
   network: string
   name: string
+  tag?: string[]
   image: string
 }
 
@@ -31,7 +32,11 @@ const CardSelector: React.FC = () => {
   >([])
   const searchInputRef = useRef<HTMLInputElement>(null)
   const fuse = useRef<Fuse<CardInfo> | null>(
-    new Fuse(cards, { includeScore: true, keys: ['name'] }),
+    new Fuse(cards, {
+      includeScore: true,
+      keys: ['name', 'network', { name: 'tag', weight: 2 }],
+      findAllMatches: true,
+    }),
   )
 
   // useEffect(() => {
