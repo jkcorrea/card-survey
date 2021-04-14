@@ -9,15 +9,14 @@ interface Props {
 }
 
 const DoneScreen: React.FC<Props> = ({ selected, goBack }) => (
-  <div className="container max-w-screen-md mx-auto w-full">
-    Cool. We got your card list.{' '}
-    <strong>
-      Now just go back to the previous tab and paste in your results.
-    </strong>
+  <div className="container max-w-screen-sm mx-auto w-full">
+    <h1 className="text-center text-6xl font-bold mb-6">Copied.</h1>
+    Cool. We copied card list to your clipboard. Now just close this tab, go
+    back to our form and paste in your card list.
     <br />
     <br />
     <span className="my-2 text-sm">
-      We copied the following cards to your clipboard:
+      To be sure, we&apos;ve got the following cards:
     </span>
     <ul className="w-auto h-64 my-1 overflow-y-scroll border-gray-200 border-dashed border-2 rounded-xl cursor-default">
       {selected.map(c => (
